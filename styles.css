@@ -1,0 +1,133 @@
+:root {
+    --main-text-color: #FFF;
+    --secondary-text-color: #7D7D7D;
+    --button-color: #FFB703;
+    --input-color: #DEDBD2;
+}
+
+/* ============ MAIN PAGE ============ */
+
+body {
+    margin: 0;
+    background-color: #022D47;
+    font-family: "Inter", sans-serif;
+    background-image: url('./assets/circles.png');
+    background-size: cover;
+}
+
+#logo-section {
+    display: flex;
+    flex-direction: column;
+    margin: 4em auto auto;
+    text-align: center;
+}
+
+#logo-section > h1 {
+    margin: 0 0 0.25em 0;
+    letter-spacing: 10px;
+    font-size: 3rem;
+    font-weight: 600;
+    color: var(--main-text-color);
+    font-family: "Caveat", cursive;
+}
+
+#logo-section > p {
+    margin: 0;
+    font-size: 0.875rem;
+    color: var(--main-text-color);
+    font-style: italic;
+    font-weight: 200;
+}
+
+#form-section{
+    margin: 0 auto;
+    width: 90%;
+    max-width: 360px;
+}
+
+#form-section > form {
+    margin-top: 2.5em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+#form-section > form > button {
+    background-color: #FFB703;
+    border: none;
+    padding: 1.5em 1.5em;
+    border-radius: 18px;
+    font-family: "Inter", sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    box-shadow: 3px 4px 4px 0px black;
+    margin-bottom: 1em;
+    cursor: pointer;
+}
+
+#form-section > form > input, #form-section > form > select {
+    border-radius: 18px;
+    background-color: var(--input-color);
+    color: var(--secondary-text-color);
+    border: none;
+    font-family: "Inter", sans-serif;
+    font-size: 1rem;
+}
+
+#form-section > form > input {
+    padding: 1.25em 1.5em;
+}
+
+#form-section > form > select {
+    padding: 0.8em 1.5em;
+}
+
+#list-section {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 90%;
+    max-width: 360px;
+    color: var(--main-text-color);
+}
+
+ul {
+    gap: 0.75em;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+}
+
+#list-section > ul > .bubble {
+    position: relative;
+    flex-grow: 1;
+    list-style: none;
+    text-align: center;
+    font-family: "Kodchasan", sans-serif;
+    border: 2px solid rgba(123, 123, 123, 0.5);
+    padding: 1em 2em;
+    border-radius: 25px;
+    box-shadow: 3px 4px 8px 0px rgba(224,243,255, 0.18);
+    background: radial-gradient(circle at center,
+              transparent 0%,
+              white 200%);
+    overflow: hidden;
+    cursor: pointer;
+}
+.bubble::before {
+    content: "";
+    position: absolute;
+    top: 7px;
+    left: 7px;
+    width: 21px;
+    height: 11px;
+    background: #BABABA;
+    border-radius: 50%;
+    transform: rotate(-40deg);
+}
+
+
+
+/* ============ MAIN PAGE END ============ */
