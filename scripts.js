@@ -43,7 +43,6 @@ itemListEl.addEventListener('click', e => {
 
         bubble.addEventListener('animationend', () => {
             bubble.remove();
-
             bubbles.splice(index, 1)
         });
     }
@@ -60,44 +59,56 @@ closeModalBtn.addEventListener('click', () => {
 // =========== UTILITY FUNCTIONS =============
 
 function addItemToList() {
-    //if item name is not empty
+    const itemInputValue = itemInputEl.value.trim()
+    const categorySelection = categorySelectEl.value
+    const customCategoryInput = categoryInputEl.value.trim()
 
-    //if item is not empty and a category is selected
-
-    //==== CUSTOM CATEGORY TESTS ====
-    //check if custom category is selected
-
-    //check if custom category has a valid value/not null
-
-    //check if custom category already exists
-
-    //==== MAIN TESTS ====
-    //check if item name is valid/not null
-
-    //check if category is selected
-
-    //check if item name and category combo already exists
-
-    if(itemInputEl.value && categorySelectEl.value){
-        if (categorySelectEl.value === 'createCustomCategory' && !categoryInputEl.value){
-            alert("Please enter item name and select a category!")
-        }
-        else{
-            const newBubbleObj = { name: itemInputEl.value, category: categorySelectEl.value}
-            bubbles.push(newBubbleObj)
-            renderBubbles()
+    //check if item name and category are filled out
+    if(itemInputValue && categorySelection){
+        //check if custom category is selected
+        if (categorySelection === 'createCustomCategory'){
+            //check if custom category has a valid value/not null
+            if (customCategoryInput){
+                //check if custom category already exists
+                if(!customCategories.includes(customCategoryInput)){
+                    addCategoryToList(customCategoryInput)
+                    addBubbleToList(itemInputValue, customCategoryInput)
+                    resetForm()
+                }
+                else{
+                    alert("This category already exists!")
+                }
+            }
+            else{
+                alert("Please enter item name and category!")
+            }
+        } //check if item name and category combo already exists
+        else if(!bubbles.find(bubble => bubble.name.toLowerCase() === itemInputValue.toLowerCase()
+        && bubble.category.toLowerCase() === categorySelection.toLowerCase())){
+            addBubbleToList(itemInputValue, categorySelection)
             resetForm()
+        }
+        else {
+            alert("This bubble already exists!")
         }
     }
     else {
         alert("Please enter item name and select a category!")
     }
-
-    //add category to category list
 }
 
-function addCategoryToList() {
+function addCategoryToList(categoryName) {
+    alert("add category function called")
+    const newCategory = document.createElement('option')
+    newCategory.value = categoryName
+    newCategory.textContent = categoryName
+    categorySelectEl.appendChild(newCategory)
+}
 
+function addBubbleToList(name, category) {
+    const newBubbleObj = { name: name, category: category}
+    bubbles.push(newBubbleObj)
+    renderBubbles()
 }
 
 function resetForm() {
@@ -106,6 +117,10 @@ function resetForm() {
     categoryInputEl.value = ""
     categoryInputEl.style.display = 'none'
 }
+
+// function renderCategories() {
+
+// }
 
 function renderBubbles() {
     itemListEl.innerHTML = ""
