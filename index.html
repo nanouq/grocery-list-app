@@ -8,35 +8,56 @@
     <title>Grocery Pop</title>
 </head>
 <body>
+
     <div class="container">
+        <i class="fa-solid fa-circle-info" id="information"></i>
         <section id="logo-section">
             <h1>Grocery <br> Pop</h1>
             <p>An interactive grocery list</p>
         </section>
         <section id="form-section">
             <form>
-                <input type="text" placeholder="Enter item name..."/>
-                <select>
-                    <option>Select a category</option>
-                    <option>Produce</option>
-                    <option>Frozen</option>
-                    <option>Dairy</option>
-                    <option>Create your own</option>
+                <input type="text" id="item-name-input" placeholder="Enter item name..."/>
+                <select id="category">
+                    <option value="">Select a category</option>
+                    <option value="createCustomCategory">Create your own</option>
+                    <option value="Produce">Produce</option>
+                    <option value="Frozen">Frozen</option>
+                    <option value="Dairy">Dairy</option>
                 </select>
-                <button>Add a bubble</button>
+                <input type="text" id="custom-category" placeholder="Enter category name.."/>
+                <button id="add-item-btn">Add a bubble</button>
             </form>
         </section>
-        <section id="list-section">
-            <p>Start by adding your first item!</p>
-            <ul>
-                <li class="bubble">Bubble</li>
-                <li class="bubble">Buuuuuuuubble2</li>
-                <li class="bubble">Bubble3</li>
-            </ul>
+        <div id="sorting">
 
+        </div>
+        <section id="list-section">
+            <p id="start-prompt">Start by adding your first item!</p>
+            <ul id="item-list">
+            </ul>
         </section>
+
+        <div id="info-modal">
+            <div id="overlay"></div>
+            <div class="modal-content">
+                <i class="fa-solid fa-xmark" id="close-modal"></i>
+                <h2 class="modal-heading">About</h2>
+                <p>Grocery Pop is an interactive shopping list designed to make creating and
+                    checking things off your grocery list more fun. </p>
+                <h2 class="modal-heading">How to use</h2>
+                <p>To add an item to your list, type the name of the item in the add item field,
+                    select a category from the dropdown list (or create your own!) and press the
+                    Add bubble button. To remove an item from your list, simply tap the bubble
+                    containing that item.
+                    <br/><br/>
+                    Click the sort by link to sort your bubbles using various criteria.</p>
+                <h2 class="modal-heading">Thanks!</h2>
+            </div>
+        </div>
     </div>
 
     <script src="./scripts.js"></script>
+    <script src="https://kit.fontawesome.com/37f433dea2.js" crossorigin="anonymous"></script>
 </body>
 </html>
