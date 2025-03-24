@@ -1,3 +1,5 @@
+// =========== IMPORTS  =============
+import { db } from "./firebase"
 // =========== ELEMENTS =============
 
 const itemListEl = document.getElementById('item-list')
