@@ -63,6 +63,7 @@ body {
     font-size: 1rem;
     font-weight: bold;
     box-shadow: 3px 4px 4px 0px black;
+    margin-top: 0.75em;
     margin-bottom: 1em;
     cursor: pointer;
     transition: background-color 0.2s ease;
@@ -242,3 +243,29 @@ ul {
     font-weight: 200;
    }
 /* ============ MAIN PAGE END ============ */
+
+/* ============ SIGNUP/LOGIN PAGE START ============ */
+
+#form-section > form > label {
+    color: var(--main-text-color);
+    font-size: 0.875rem;
+    font-weight: 200;
+    padding-left: 1em;
+}
+
+.container > p {
+    color: var(--main-text-color);
+    margin-top: 2em;
+    font-style: italic;
+    font-weight: 200;
+    text-align: center;
+}
+
+a{
+    color: var(--main-text-color);
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+a:hover {
+    color: var(--button-color)
+}
