@@ -16,7 +16,7 @@ Grocery Pop is an interactive grocery list designed to make creating your grocer
 
 ## Design Photos
 
-![The Grocery Pop Main Page](https://imgur.com/4LQU0KS)
+![The Grocery Pop Main Page](https://i.imgur.com/4LQU0KS.png)
 
-![The Grocery Pop Sign Up Page](https://imgur.com/aT8aofx)
+![The Grocery Pop Sign Up Page](https://i.imgur.com/aT8aofx.png)
 
